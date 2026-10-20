@@ -95,9 +95,12 @@ cobre, brillos especulares y efectos de cámara), con etiquetas por unión.
 
 `.github/workflows/deploy-pages.yml` publica el sitio en GitHub Pages con el
 flujo oficial (`configure-pages`, `upload-pages-artifact`, `deploy-pages`).
-El paso de configuración usa `enablement: true`, así que **la primera
-ejecución del workflow activa sola GitHub Pages** (Source: GitHub Actions);
-no hace falta tocar Settings → Pages. Se dispara en cada push a `main` y
-manualmente con `workflow_dispatch`.
+Se dispara en cada push a `main` y manualmente con `workflow_dispatch`.
+
+**Activación (una sola vez, manual):** GitHub exige el permiso
+*Administration* para crear el sitio Pages y ese permiso no se le puede dar al
+token del workflow, así que la primera vez hay que activarlo a mano:
+**Settings → Pages → Build and deployment → Source: GitHub Actions**. A partir
+de ahí, cada push a `main` redespliega solo.
 
 URL pública: <https://ojperdomoc.github.io/CheckPCBA_IPC610_UNAL/>

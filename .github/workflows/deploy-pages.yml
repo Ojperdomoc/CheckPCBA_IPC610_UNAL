@@ -28,8 +28,11 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
         with:
-          # Habilita GitHub Pages (source: GitHub Actions) si aún no está activo.
-          # Requiere los permisos pages:write e id-token:write declarados arriba.
+          # Intenta habilitar Pages automáticamente si el sitio no existe.
+          # OJO: la API "Create a Pages site" exige el permiso Administration
+          # (write), que el GITHUB_TOKEN del workflow no puede obtener; por eso
+          # la primera activación es manual: Settings → Pages → Source:
+          # GitHub Actions. Con Pages ya activo, este paso siempre pasa.
           enablement: true
 
       - name: Assemble static site
