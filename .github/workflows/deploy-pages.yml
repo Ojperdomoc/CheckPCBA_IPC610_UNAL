@@ -27,6 +27,10 @@ jobs:
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
+        with:
+          # Habilita GitHub Pages (source: GitHub Actions) si aún no está activo.
+          # Requiere los permisos pages:write e id-token:write declarados arriba.
+          enablement: true
 
       - name: Assemble static site
         run: |

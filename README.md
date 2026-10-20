@@ -16,7 +16,7 @@ La app abre la cámara o una foto, analiza por **teselas solapadas**, permite
 un **informe PDF** con la evidencia anotada, vistas ampliadas de las zonas
 críticas, resumen de hallazgos y recomendaciones citando la norma.
 
-**App publicada:** <https://ojperdomoc.github.io/CheckPCBA_IPC610/>
+**App publicada:** <https://ojperdomoc.github.io/CheckPCBA_IPC610_UNAL/>
 
 > Ninguna imagen sale del dispositivo: la inferencia y el PDF se generan en el
 > navegador. Todas las dependencias (`vendor/`) y el modelo (`modelos/`) están
@@ -93,6 +93,11 @@ cobre, brillos especulares y efectos de cámara), con etiquetas por unión.
 
 ## Publicación
 
-`.github/workflows/deploy-pages.yml` publica la raíz del repositorio en GitHub
-Pages con el flujo oficial (`configure-pages`, `upload-pages-artifact`,
-`deploy-pages`). Para activarlo: **Settings → Pages → Source: GitHub Actions**.
+`.github/workflows/deploy-pages.yml` publica el sitio en GitHub Pages con el
+flujo oficial (`configure-pages`, `upload-pages-artifact`, `deploy-pages`).
+El paso de configuración usa `enablement: true`, así que **la primera
+ejecución del workflow activa sola GitHub Pages** (Source: GitHub Actions);
+no hace falta tocar Settings → Pages. Se dispara en cada push a `main` y
+manualmente con `workflow_dispatch`.
+
+URL pública: <https://ojperdomoc.github.io/CheckPCBA_IPC610_UNAL/>
